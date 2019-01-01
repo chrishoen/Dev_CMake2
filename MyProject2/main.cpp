@@ -2,6 +2,7 @@
 
 #include "MyClass2.h"
 #include "MyFunction2.h"
+#include "MyFunction1.h"
 
 int main(int argc, char** argv)
 {
@@ -9,5 +10,6 @@ int main(int argc, char** argv)
    MyClass2 tMyClass2;
    tMyClass2.doSomething();
    doMyFunction2();
+   doMyFunction1();
    return 0;
 }

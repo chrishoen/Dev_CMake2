@@ -5,11 +5,12 @@ file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/*.cpp)
 add_executable (MyProject2 ${SRC_FILES})
 
 target_include_directories(MyProject2 PRIVATE MyLibrary2)
-target_link_libraries(MyProject2 MyLibrary2)
+target_include_directories(MyProject2 PRIVATE "/var/tmp/Dev_CMake1/install/include")
 
-message(STATUS "********************************* MyProject2")
-message(STATUS "CMAKE_CXX_FLAGS " ${CMAKE_CXX_FLAGS})
-message(STATUS "CMAKE_EXE_LINKER_FLAGS " ${CMAKE_EXE_LINKER_FLAGS})
-message(STATUS "CMAKE_INSTALL_PREFIX " ${CMAKE_INSTALL_PREFIX})
+add_library(MyLibrary1 STATIC IMPORTED)
+set_target_properties(MyLibrary1 PROPERTIES IMPORTED_LOCATION "/var/tmp/Dev_CMake1/install/lib/libMyLibrary1.a")
+
+target_link_libraries(MyProject2 MyLibrary2)
+target_link_libraries(MyProject2 MyLibrary1)
 
 install(TARGETS MyProject2 DESTINATION bin)
