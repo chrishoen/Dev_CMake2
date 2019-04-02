@@ -2,15 +2,11 @@
 //******************************************************************************
 //******************************************************************************
 
-#include <stdio.h>
+#include "stdafx.h"
 
-#include "MyClass2.h"
+#include "MyFunction1.h"
 
-MyClass2::MyClass2()
+void doMyFunction1()
 {
-}
-
-void MyClass2::doSomething()
-{
-   printf("MyClass2::doSomething2\n");
+   printf("doMyFunction1\n");
 }
