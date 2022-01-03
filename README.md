@@ -1,4 +1,4 @@
-# Dev_CMake1
+# Dev_CMake2
 cmake test programs, c++, vstudio, open folder, cmake, linux, windows
 
 ## Build target platforms
