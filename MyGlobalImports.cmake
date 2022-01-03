@@ -4,7 +4,7 @@
 
 function(my_init_global_import_variables)
 
-   if (MVC)
+   if (MSVC)
       set (MySharedLibIncludePath "C:/MyTools/MyLib/include/MySharedLib" PARENT_SCOPE)
       set (MySharedLibImportPath  "C:/MyTools/MyLib/lib/MySharedLib.lib" PARENT_SCOPE)
    elseif (MyTargetType STREQUAL ubuntu)
@@ -25,9 +25,15 @@ endfunction()
 
 function(my_lib_import_MySharedLib _target)
 
-   add_library(MySharedLib STATIC IMPORTED)
-   set_target_properties(MySharedLib PROPERTIES IMPORTED_LOCATION ${MySharedLibImportPath})
-   target_link_libraries(${_target} MySharedLib)
+   if (MSVC)
+      add_library(MySharedLib STATIC IMPORTED)
+      set_target_properties(MySharedLib PROPERTIES IMPORTED_LOCATION ${MySharedLibImportPath})
+      target_link_libraries(${_target} MySharedLib)
+   else()
+      add_library(MySharedLib SHARED IMPORTED)
+      set_target_properties(MySharedLib PROPERTIES IMPORTED_LOCATION ${MySharedLibImportPath})
+      target_link_libraries(${_target} MySharedLib)
+   endif()
 
 endfunction()
 
