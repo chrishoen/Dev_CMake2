@@ -1,0 +1,16 @@
+﻿// copied from CMakeSettings_win.json
+{
+   "configurations": [
+      {
+         "name": "Dev_CMake2",
+         "inheritEnvironments": [ "msvc_x64_x64" ],
+         "generator": "Ninja",
+         "configurationType": "Release",
+         "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${name}",
+         "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${name}\\install",
+         "cmakeCommandArgs": "",
+         "buildCommandArgs": "-v -j8",
+         "ctestCommandArgs": ""
+      }
+   ]
+}
