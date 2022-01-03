@@ -17,17 +17,12 @@ my_init_global_import_variables()
 add_subdirectory ("MyStaticLib")
 add_subdirectory ("MyProgram1")
 add_subdirectory ("MyProgram2")
-add_subdirectory ("MyProgram3")
 return()
 
-add_subdirectory ("MyProgram3")
-return()
 
 add_subdirectory ("MyProgram1")
 return()
 
-add_subdirectory ("MyProgram3")
-return()
 
 
 
