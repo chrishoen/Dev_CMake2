@@ -14,6 +14,8 @@ function(my_init_global_import_variables)
       set (MySharedLibIncludePath "C:/MyTools/MyLib/include/MySharedLib" PARENT_SCOPE)
       set (MySharedLibImportPath  "C:/MyTools/MyLib/lib/libMySharedLib.so" PARENT_SCOPE)
    elseif (MyTargetType STREQUAL dart)
+      set (MySharedLibIncludePath "${SRC_LINUX_DIR}/local/include/MySharedLib" PARENT_SCOPE)
+      set (MySharedLibImportPath  "${SRC_LINUX_DIR}/local/lib/libMySharedLib.so" PARENT_SCOPE)
    endif()
 
 

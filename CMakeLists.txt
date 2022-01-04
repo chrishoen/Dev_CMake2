@@ -15,10 +15,14 @@ my_special1()
 my_init_global_import_variables()
 
 add_subdirectory ("MyStaticLib")
-add_subdirectory ("MyProgram1")
 add_subdirectory ("MyProgram2")
 return()
 
+
+add_subdirectory ("MyStaticLib")
+add_subdirectory ("MyProgram1")
+add_subdirectory ("MyProgram2")
+return()
 
 add_subdirectory ("MyProgram1")
 return()
